@@ -40,11 +40,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Cameraswitch
-import androidx.compose.material.icons.filled.FlashAuto
-import androidx.compose.material.icons.filled.FlashOff
-import androidx.compose.material.icons.filled.FlashOn
+import androidx.compose.ui.res.painterResource
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -300,7 +296,7 @@ fun CameraScreen() {
                     )
                     CircleIconButton(onClick = { isFrontCamera = !isFrontCamera }) {
                         Icon(
-                            imageVector = Icons.Filled.Cameraswitch,
+                            painter = painterResource(R.drawable.ic_cameraswitch),
                             contentDescription = "Switch camera",
                             tint = Color.White,
                             modifier = Modifier.size(26.dp)
@@ -348,14 +344,14 @@ private fun CircleIconButton(onClick: () -> Unit, content: @Composable () -> Uni
 @Composable
 private fun FlashButton(flashMode: Int, onClick: () -> Unit, modifier: Modifier = Modifier) {
     val icon = when (flashMode) {
-        ImageCapture.FLASH_MODE_ON -> Icons.Filled.FlashOn
-        ImageCapture.FLASH_MODE_AUTO -> Icons.Filled.FlashAuto
-        else -> Icons.Filled.FlashOff
+        ImageCapture.FLASH_MODE_ON -> R.drawable.ic_flash_on
+        ImageCapture.FLASH_MODE_AUTO -> R.drawable.ic_flash_auto
+        else -> R.drawable.ic_flash_off
     }
     Box(modifier = modifier) {
         CircleIconButton(onClick = onClick) {
             Icon(
-                imageVector = icon,
+                painter = painterResource(icon),
                 contentDescription = "Flash",
                 tint = Color.White,
                 modifier = Modifier.size(24.dp)
