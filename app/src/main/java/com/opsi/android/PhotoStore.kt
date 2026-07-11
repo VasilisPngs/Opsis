@@ -107,7 +107,7 @@ private fun publishToGallery(context: Context, source: File, displayName: String
     val pending = ContentValues().apply {
         put(MediaStore.Images.Media.DISPLAY_NAME, displayName)
         put(MediaStore.Images.Media.MIME_TYPE, mimeType)
-        put(MediaStore.Images.Media.RELATIVE_PATH, "Pictures/Opsi")
+        put(MediaStore.Images.Media.RELATIVE_PATH, "DCIM/Camera")
         put(MediaStore.Images.Media.DATE_TAKEN, System.currentTimeMillis())
         put(MediaStore.Images.Media.IS_PENDING, 1)
     }
