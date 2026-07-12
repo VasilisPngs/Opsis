@@ -217,7 +217,7 @@ fun CameraScreen() {
             modifier = Modifier
                 .fillMaxWidth()
                 .aspectRatio(frameRatio.widthOverHeight)
-                .align(Alignment.TopCenter)
+                .align(Alignment.Center)
                 .pointerInput(camera) {
                     detectTransformGestures { _, _, zoom, _ ->
                         val cam = camera ?: return@detectTransformGestures
